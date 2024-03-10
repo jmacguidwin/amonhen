@@ -54,10 +54,7 @@ function App() {
     <div className="App">
       <div className="camera">
         <video ref={videoRef}></video>
-        <button onClick={takePhoto}>SNAP!</button>
-      </div>
-      <div className = "test">
-        <button>Test!</button>
+        <button onClick={takePhoto}>Banana!</button>
       </div>
       <div className={'result ' + (hasPhoto ? 'hasPhoto'
       : '')}>
