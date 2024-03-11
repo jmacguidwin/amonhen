@@ -1,5 +1,9 @@
-import React, {useRef, useEffect, useState} from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, {components, useRef, useEffect, useState} from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from ".components/Home";
+import About from ".components/About";
+import Contact from ".components/Contact";
+
 
 function App() {
   const videoRef = useRef(null);
@@ -23,7 +27,7 @@ function App() {
   }
 
   const takePhoto = () => {
-    const width = 414;
+    const width = 1000;
     const height = width / (16/9);
 
     let video = videoRef.current;
