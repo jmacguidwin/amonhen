@@ -25,6 +25,7 @@ const Background = styled.div`
     justify-content: center;
     margin-top: 50px;
 `
+
 const Foreground = styled.div`
     width: 380px;
     height: 600px;
