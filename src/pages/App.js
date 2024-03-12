@@ -1,8 +1,9 @@
-import React, {components, useRef, useEffect, useState} from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import React, { useRef, useEffect, useState} from 'react';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const videoRef = useRef(null);
+  const videoRef2 = useRef(null); //new
   const photoRef = useRef(null);
 
   const [hasPhoto, setHasPhoto] = useState(false);
@@ -14,8 +15,11 @@ function App() {
       })
       .then(stream => {
         let video = videoRef.current;
+        let video2 = videoRef2.current; //new
         video.srcObject = stream;
+        video2.srcObject = stream; //new
         video.play();
+        video2.play(); //new
       })
       .catch(err => {
         console.error(err);
@@ -56,6 +60,7 @@ function App() {
       <div className="camera">
         <video ref={videoRef}></video>
         <button onClick={takePhoto}>Banana!</button>
+        <video ref={videoRef2}></video> {/*new*/}
       </div>
       <div className={'result ' + (hasPhoto ? 'hasPhoto'
       : '')}>

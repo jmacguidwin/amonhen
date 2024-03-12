@@ -31,10 +31,11 @@
 }
 
 video {
-  width: 100%;
-  max-width: 100%;
-  height: auto
+  max-width: 45%;
+  justify-content: space-between;
+  height: auto;
 }
+
 
 button {
   position: absolute;
@@ -64,3 +65,15 @@ canvas {
   width: 100%;
   height: auto;
 }
+
+/* new stuff */
+.video-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.video-container video {
+  width: 45%; /* Adjust as needed */
+}
+
+/* end new stuff */
