@@ -65,15 +65,3 @@ canvas {
   width: 100%;
   height: auto;
 }
-
-/* new stuff */
-.video-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.video-container video {
-  width: 45%; /* Adjust as needed */
-}
-
-/* end new stuff */

@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState} from 'react';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const videoRef = useRef(null);
