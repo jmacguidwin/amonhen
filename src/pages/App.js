@@ -17,9 +17,16 @@ function App() {
         let video2 = videoRef2.current; //new
         video.srcObject = stream;
         video2.srcObject = stream; //new
-        video.play();
-        video2.play(); //new
+
+        // Add event listeners to play the video when the metadata has loaded
+        video.onloadedmetadata = () => {
+          video.play();
+        };
+        video2.onloadedmetadata = () => {
+          video2.play();
+        };
       })
+
       .catch(err => {
         console.error(err);
       })
