@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState} from 'react';
-import BudgetBox from '../components/cards/BudgetBox';
-import { RemainingBox, RemainingBoxMonth } from '../components/cards/RemainingBox';
+// import BudgetBox from '../components/cards/BudgetBox';
+import { TotalBox, RemainingBox, RemainingBoxMonth } from '../components/cards/RemainingBox';
 
 function App() {
   const videoRef = useRef(null);
@@ -62,8 +62,12 @@ function App() {
   }, [videoRef]);
 
   return (
-    <div className="App">
+    <div className="app">
       
+      <div className='header'>
+        <h1>Jim</h1>
+      </div>
+
       <div className="camera">
         <video ref={videoRef}></video>
         <button onClick={takePhoto}>Banana!</button>
@@ -76,8 +80,11 @@ function App() {
       </div>
 
       <div className="budgetBoxes">
-        <BudgetBox setTotalBudget={setTotalBudget} />
         <RemainingBox totalBudget={totalBudget} spent={spent} />
+    </div>
+
+    <div className='footer'>
+        <p>footer</p>
     </div>
 
     </div>

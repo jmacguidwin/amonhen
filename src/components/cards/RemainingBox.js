@@ -1,6 +1,13 @@
 // RemainingBox.js
 import React from 'react';
 
+function TotalBox({ totalBudget }) {
+  return (
+    <div>
+      Remaining: {totalBudget}
+    </div>
+  );
+}
 function RemainingBox({ totalBudget, spent }) {
   return (
     <div>
@@ -17,4 +24,4 @@ function RemainingBoxMonth({ totalBudget, spent }) {
     );
   }
   
-export {RemainingBox, RemainingBoxMonth};
+export {RemainingBox, RemainingBoxMonth, TotalBox};
