@@ -75,7 +75,7 @@ function App() {
         <button onClick={closePhoto}>CLOSE!</button>
       </div>
 
-      <div>
+      <div className="budgetBoxes">
         <BudgetBox setTotalBudget={setTotalBudget} />
         <RemainingBox totalBudget={totalBudget} spent={spent} />
     </div>
