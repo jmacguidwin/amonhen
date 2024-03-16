@@ -1,9 +1,13 @@
 import React, { useRef, useEffect, useState} from 'react';
+import BudgetBox from '../components/cards/BudgetBox';
+import { RemainingBox, RemainingBoxMonth } from '../components/cards/RemainingBox';
 
 function App() {
   const videoRef = useRef(null);
-  const videoRef2 = useRef(null); //new
   const photoRef = useRef(null);
+  const [totalBudget, setTotalBudget] = useState(0); // new
+  const [spent, setSpent] = useState(0); // new
+
 
   const [hasPhoto, setHasPhoto] = useState(false);
 
@@ -14,16 +18,12 @@ function App() {
       })
       .then(stream => {
         let video = videoRef.current;
-        let video2 = videoRef2.current; //new
         video.srcObject = stream;
-        video2.srcObject = stream; //new
+
 
         // Add event listeners to play the video when the metadata has loaded
         video.onloadedmetadata = () => {
           video.play();
-        };
-        video2.onloadedmetadata = () => {
-          video2.play();
         };
       })
 
@@ -63,16 +63,23 @@ function App() {
 
   return (
     <div className="App">
+      
       <div className="camera">
         <video ref={videoRef}></video>
         <button onClick={takePhoto}>Banana!</button>
-        <video ref={videoRef2}></video> {/*new*/}
       </div>
+
       <div className={'result ' + (hasPhoto ? 'hasPhoto'
       : '')}>
         <canvas ref={photoRef}></canvas>
         <button onClick={closePhoto}>CLOSE!</button>
       </div>
+
+      <div>
+        <BudgetBox setTotalBudget={setTotalBudget} />
+        <RemainingBox totalBudget={totalBudget} spent={spent} />
+    </div>
+
     </div>
   );
 }
