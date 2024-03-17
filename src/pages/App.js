@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState} from 'react';
 // import BudgetBox from '../components/cards/BudgetBox';
-import { TotalBox, RemainingBox, RemainingBoxMonth } from '../components/cards/RemainingBox';
+import { TotalBox, RemainingBox, RemainingBoxMonth } from '../components/cards/Budget';
 
 function App() {
   const videoRef = useRef(null);
@@ -81,11 +81,19 @@ function App() {
 
       <div className="budgetBoxes">
         <RemainingBox totalBudget={totalBudget} spent={spent} />
-    </div>
+      </div>
 
-    <div className='footer'>
-        <p>footer</p>
-    </div>
+      <div className="budgetBoxes">
+        <TotalBox totalBudget={totalBudget} spent={spent} />
+      </div>
+
+      <div className="budgetBoxes">
+        <RemainingBoxMonth totalBudget={totalBudget} spent={spent} />
+      </div>
+      
+      <div className='footer'>
+          <p>footer</p>
+      </div>
 
     </div>
   );
